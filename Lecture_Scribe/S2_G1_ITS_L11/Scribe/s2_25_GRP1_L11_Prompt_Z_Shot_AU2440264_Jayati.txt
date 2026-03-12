@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+
+% ===================== PACKAGES =====================
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+
+% ===================== HEADER & FOOTER =====================
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{CSE400: Fundamentals of Probability in Computing}
+\rhead{Lecture 11 Scribe}
+\cfoot{\thepage}
+
+% ===================== TITLE =====================
+\title{\textbf{Lecture 11 Scribe: Transformation of Random Variables}\\
+\vspace{0.2cm}\large February 10, 2026}
+\author{\textbf{Jayati Shah}\\
+AU ID: \textbf{AU2440264}\\
+\vspace{0.2cm}
+Instructor: Dhaval Patel, PhD\\
+SEAS -- Ahmedabad University}
+\date{}
+
+\begin{document}
+
+\maketitle
+\vspace{-0.3cm}
+\hrule
+\vspace{0.4cm}
+
+% ===================== INTRODUCTION =====================
+\section{Introduction}
+
+This document is a lecture scribe for Lecture 11 (Section 2) of CSE 400: Fundamentals of Probability in Computing.  
+The material presented follows the lecture slides strictly and includes only the definitions, assumptions, formulas, derivations, and examples provided in the lecture. \cite{lecture}
+
+% ===================== LECTURE OUTLINE =====================
+\section{Lecture Outline}
+
+\begin{enumerate}[leftmargin=*]
+\item Transformation of Random Variables
+\item Function of Two Random Variables
+\item Illustrative Example
+\end{enumerate}
+
+% ===================== TRANSFORMATION OF RANDOM VARIABLES =====================
+\section{Transformation of Random Variables}
+
+\subsection{Objective}
+Learning transformation techniques for random variables.
+
+\subsection{Case: Function of One Random Variable}
+
+Let
+
+\[
+Y = g(X)
+\]
+
+\subsection{Assumptions}
+
+\begin{itemize}[leftmargin=*]
+\item The PDF of $X$, denoted $f_X(x)$, is known a priori.
+\item The function $g(\cdot)$ is monotonic (either strictly increasing or strictly decreasing).
+\end{itemize}
+
+% ===================== CDF METHOD =====================
+\subsection{Step 1: Cumulative Distribution Function}
+
+\[
+F_Y(y) = Pr(Y \le y)
+\]
+
+If $g(\cdot)$ is monotonic increasing:
+
+\[
+F_Y(y) = Pr(g(X) \le y)
+\]
+
+\[
+= Pr(X \le g^{-1}(y))
+\]
+
+\[
+= F_X(g^{-1}(y))
+\]
+
+If $g(\cdot)$ is monotonic decreasing:
+
+\[
+F_Y(y) = Pr(X \ge g^{-1}(y))
+\]
+
+\[
+= 1 - F_X(g^{-1}(y))
+\]
+
+% ===================== PDF STEP =====================
+\subsection{Step 2: Probability Density Function}
+
+\[
+f_Y(y) = \frac{d}{dy}F_Y(y)
+\]
+
+Final PDF transformation formula:
+
+\[
+f_Y(y) = f_X(g^{-1}(y)) \cdot \frac{d}{dy}g^{-1}(y)
+\]
+
+or
+
+\[
+f_Y(y) =
+f_X(x)\left|\frac{dx}{dy}\right|_{x=g^{-1}(y)}
+\]
+
+\subsection{Additional Condition}
+
+If the transformation reverses order (negative slope), the limits of $y$ must be adjusted accordingly.
+
+% ===================== TWO RANDOM VARIABLES =====================
+\section{Function of Two Random Variables}
+
+Let
+
+\[
+Z = g(X,Y)
+\]
+
+Objective:
+
+Find the PDF of the transformed random variable $Z$, i.e.
+
+\[
+f_Z(z)
+\]
+
+% ===================== EXAMPLE 1 =====================
+\section{Illustrative Example}
+
+\subsection{Example 1: Transformation of a Single Random Variable}
+
+Given
+
+\[
+X \sim U(-1,1)
+\]
+
+\[
+f_X(x)=
+\begin{cases}
+\frac{1}{2}, & -1<x<1 \\
+0, & otherwise
+\end{cases}
+\]
+
+Transformation:
+
+\[
+Y = g(X) = \sin\left(\frac{\pi X}{2}\right)
+\]
+
+Inverse transformation:
+
+\[
+x = g^{-1}(y) = \frac{2}{\pi}\sin^{-1}(y)
+\]
+
+Derivative:
+
+\[
+\frac{dx}{dy} = \frac{2}{\pi}\frac{1}{\sqrt{1-y^2}}
+\]
+
+PDF of $Y$:
+
+\[
+f_Y(y) = f_X(x)\left|\frac{dx}{dy}\right|
+\]
+
+\[
+f_Y(y) =
+\frac{1}{2}\cdot
+\frac{2}{\pi}\cdot
+\frac{1}{\sqrt{1-y^2}}
+\]
+
+Final result:
+
+\[
+f_Y(y)=
+\begin{cases}
+\frac{1}{\pi\sqrt{1-y^2}}, & -1<y<1 \\
+0, & otherwise
+\end{cases}
+\]
+
+% ===================== EXAMPLE 2 =====================
+\section{Example 2: Sum of Two Random Variables}
+
+Let
+
+\[
+Z = X + Y
+\]
+
+Find
+
+\begin{enumerate}[leftmargin=*]
+\item $f_Z(z)$
+\item $f_Z(z)$ if $X$ and $Y$ are independent
+\item If $X \sim N(0,1)$ and $Y \sim N(0,1)$, prove $Z \sim N(0,2)$
+\item If $X$ and $Y$ are exponential with parameter $\lambda$, find $f_Z(z)$
+\end{enumerate}
+
+% ===================== CDF DERIVATION =====================
+\section{CDF Method}
+
+\[
+F_Z(z) = Pr(Z \le z)
+\]
+
+\[
+= Pr(X + Y \le z)
+\]
+
+Region of integration:
+
+\[
+x + y \le z
+\]
+
+Using joint PDF:
+
+\[
+F_Z(z) =
+\int_{-\infty}^{\infty}
+\int_{-\infty}^{z-x}
+f_{X,Y}(x,y)\,dy\,dx
+\]
+
+PDF of $Z$:
+
+\[
+f_Z(z) =
+\frac{d}{dz}F_Z(z)
+\]
+
+\vspace{0.4cm}
+\hrule
+\vspace{0.2cm}
+
+\noindent
+\textit{End of Lecture 11 – Section 2}
+
+\end{document}
