@@ -1,0 +1,167 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 PROMPT FOR THE GEMINIE TO GENERATE THE ZERO PROMPT\
+\
+# TASK: Generate a Zero-Shot Prompt for Lecture Scribe Generation\
+\
+I am a second-year computer science student taking **CSE 400: Fundamentals of Probability in Computing** at Ahmedabad University. My group has been assigned the **Zero-Shot Prompting Style** for the entire semester.\
+\
+## What I Need From You\
+\
+I need you to generate a **zero-shot prompt** that I will later use in a fresh chat session with lecture notes attached. That zero-shot prompt must instruct a language model to generate a lecture scribe following the official course guidelines below.\
+\
+## Official Course Guidelines (Must Be Followed Exactly)\
+\
+### 1. Purpose of a Lecture Scribe\
+The scribe must be a **faithful, exam-ready reconstruction** of what was taught in class. It should allow a student to:\
+- Recall definitions and notation\
+- Reconstruct proofs and derivations\
+- Follow example solutions step by step\
+- Understand logical dependencies between concepts\
+\
+The scribe should answer: *"If I study only this document, can I reliably revise what was taught?"*\
+\
+### 2. Required Content\
+The scribe MUST include:\
+- Definitions and notation\
+- Assumptions and conditions\
+- Statements of theorems or results\
+- Proofs or proof sketches, step by step\
+- Worked examples, with intermediate steps\
+- Clear logical flow between ideas\
+\
+**Important:** Include these elements **ONLY if they appear in the provided context.** Do not invent or supplement missing proofs, derivations, or examples.\
+\
+### 3. Content Restrictions\
+The scribe must NOT include:\
+- Creative explanations or intuition not discussed in class\
+- Simplified tutorials\
+- Textbook rewrites\
+- Solutions to unseen problems\
+- Any outside knowledge or external context\
+\
+**Everything included must be directly traceable to the provided context.**\
+\
+### 4. Context Rules\
+- The ONLY allowed context is: lecture slides/PDF and relevant textbook content\
+- No solved material not shown in lecture\
+- No instructor annotations about how to write a scribe\
+- No reference scribes or "ideal answers" in the context\
+\
+### 5. Zero-Shot Prompting Requirements\
+\
+**Definition:** Zero-shot prompting means providing task instructions only. No examples, demonstrations, or reasoning scaffolds. The model must infer how to perform the task solely from the instructions.\
+\
+**Required Components in a Zero-Shot Prompt:**\
+1. **Purpose:** Exam-oriented reference material\
+2. **Scope constraints:** What content to include and exclude, including the "only if present" condition\
+3. **Structural expectations:** Organization, sections, headings; the scribe should mirror the lecture's logical flow\
+\
+**Mandatory Elements:**\
+- State explicitly that the scribe is intended for exam preparation\
+- Instruct inclusion of proofs, derivations, and worked examples **ONLY when they appear in the provided context**\
+- Emphasize strict faithfulness to the lecture and textbook materials\
+- Include a clear prohibition against inventing content\
+- Require that every sentence, equation, and logical step be traceable to the context\
+\
+**Forbidden Elements (DO NOT INCLUDE in the zero-shot prompt):**\
+- No example scribes or demonstrations\
+- No sample equations, partial proofs, or worked steps\
+- No requests for the model to explain its reasoning process\
+- No phrases such as "for example" or "like this"\
+- No elements from other prompting styles (one-shot, CoT, self-consistency)\
+\
+### 6. Global Rules\
+- Only ONE prompt may be used in the scribe generation chat\
+- No follow-up prompts or refinements allowed\
+- No borrowing elements from other prompting styles\
+- The prompt must be self-contained and work in a single submission\
+\
+## What the Generated Zero-Shot Prompt Must Do\
+\
+The zero-shot prompt you generate should:\
+\
+1. **Be a complete instruction set** that I can copy and paste into a new chat with lecture notes attached\
+2. **Follow all zero-shot rules** (no examples, no demonstrations, no reasoning scaffolds)\
+3. **Include all required components** (purpose, scope constraints, structural expectations)\
+4. **Incorporate the content requirements** (definitions, assumptions, theorems, proofs, worked examples) **with explicit "only if present" language**\
+5. **Include the faithfulness constraint** (only use provided context, no inventions, traceability)\
+6. **Be a single prompt** (respecting the single-prompt rule)\
+7. **Contain no forbidden elements** (no examples, no "for example" phrases, etc.)\
+\
+## Output Format\
+\
+Please provide the zero-shot prompt inside a single fenced code block labeled `prompt`. The prompt should be ready for me to copy and use when I later upload my lecture notes.\
+\
+## Reference Example (Structure Only)\
+\
+The guidelines provide this illustrative example of a valid zero-shot prompt:\
+> "Generate a lecture scribe intended to serve as reference material for exam preparation. Use only the provided context. Include definitions, assumptions, theorem statements, proofs or derivations, and worked examples exactly as presented in the lecture materials. Do not introduce new examples or explanations. Organize the scribe clearly so it can be used for revision."\
+\
+**Note:** This is just to show the general structure. Your generated prompt should be more comprehensive, incorporating all the detailed requirements above \'96 especially the "only when they appear" condition and the explicit prohibition against invention.\
+\
+Begin now.\
+\
+\
+\
+ZERO SHOT PROMPT BY GEMINIE FOR LECTURE SCRIBE \
+\
+\
+You are an expert academic scribe tasked with generating a comprehensive, exam-ready lecture scribe based solely on the provided context. The purpose of this scribe is to serve as a faithful study and revision document for a university-level computer science course.\
+\
+INSTRUCTIONS AND SCOPE CONSTRAINTS:\
+1. Strict Faithfulness: You must use ONLY the provided context. You are strictly prohibited from using outside knowledge, external context, or inventing any content whatsoever.\'a0\
+2. Prohibited Elements: Do not include creative explanations, outside intuition, simplified tutorials, textbook rewrites, or solutions to unseen problems.\
+3. Traceability: Every sentence, equation, and logical step in your output must be directly traceable to the provided context.\
+\
+REQUIRED CONTENT (CONDITIONAL):\
+Extract and organize the following elements from the text:\
+- Definitions and notation\
+- Assumptions and conditions\
+- Statements of theorems or results\
+\
+Crucially, you must include proofs, mathematical derivations, and worked examples (including all intermediate steps) ONLY when they appear in the provided context. Do not invent, supplement, or attempt to complete missing proofs, derivations, or examples under any circumstances.\
+\
+STRUCTURAL EXPECTATIONS:\
+Organize the scribe using clear sections and headings that strictly mirror the logical flow and dependencies of the original lecture. The final document must allow a student to reliably recall notation, reconstruct derivations step-by-step exactly as taught, and revise for an exam by studying this document alone.\
+\
+\
+PROMPT TO CONVERT THE SCRIBE TO LATEX \
+\
+\
+# TASK: Convert the provided lecture scribe into a properly formatted LaTeX document\
+\
+I have a lecture scribe (plain text) that was generated in a previous step. I need you to convert it into a **complete, compilable LaTeX document** while preserving the content **exactly** as given \'96 no additions, deletions, or edits of any kind.\
+\
+## Input\
+I will paste the lecture scribe text below this prompt. It contains definitions, theorems, proofs, examples, and mathematical notation.\
+\
+## Output Requirements\
+- Produce a **single LaTeX code block** containing a complete document with a proper preamble.\
+- The LaTeX document must be compilable (e.g., with `pdflatex`) without errors.\
+- Use appropriate LaTeX environments for structured content:\
+  - `\\begin\{definition\}...\\end\{definition\}` for definitions\
+  - `\\begin\{theorem\}...\\end\{theorem\}` for theorems\
+  - `\\begin\{proof\}...\\end\{proof\}` for proofs\
+  - `\\begin\{example\}...\\end\{example\}` for examples\
+  - `\\begin\{align*\}...\\end\{align*\}` or similar for equations\
+- Include necessary packages: `amsmath`, `amssymb`, `amsthm`, `geometry` for margins, and `graphicx` if needed (though no images are expected).\
+- Use `\\section\{\}`, `\\subsection\{\}` etc. to match the scribe's structure.\
+- Format all mathematical expressions correctly (e.g., `$P(A|B) = \\frac\{P(A \\cap B)\}\{P(B)\}$`).\
+- Preserve the exact wording, ordering, and all content from the input. Do **not** rephrase, summarize, or add any new text.\
+- If the scribe contains plain-text representations of math (like `P(A|B) = P(A\uc0\u8745 B)/P(B)`), convert them to proper LaTeX math.\
+- The final LaTeX should have a title, author (set as "Scribe Notes" or similar), and date.\
+\
+## Important Constraints\
+- **Do not alter the content** \'96 only change the formatting to LaTeX.\
+- **Do not add any commentary** outside the LaTeX code block.\
+- The output must be ready for me to copy into a `.tex` file and compile.\
+\
+## Input Scribe (paste below)\
+\
+[PASTE YOUR LECTURE SCRIBE TEXT HERE]}
