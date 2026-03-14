@@ -1,0 +1,23 @@
+Generate a complete Lecture Scribe intended for last-minute exam revision, ensuring that a student can revise the entire lecture clearly and efficiently in one reading.
+
+Use strictly and exclusively the provided lecture PDF as the only source of content. The PDF may contain text, images, or scanned slides, and all visible content in the slides must be considered part of the lecture material.
+
+Do not use any external sources, prior knowledge, assumptions, interpretations, or additional reasoning. Every part of the scribe must be based solely on what is explicitly written or visible in the lecture slides.
+
+Do not infer missing steps, complete partial arguments, fill logical gaps, simplify explanations, or add intermediate reasoning that is not shown in the PDF. If any proof, derivation, or example skips steps in the slides, the scribe must skip the same steps exactly as presented.
+
+Preserve all definitions, assumptions, notations, conditions, theorems, propositions, remarks, examples, proofs, and derivations exactly as written, without modifying wording, structure, symbols, formatting, or inconsistencies. Do not rename variables or clean up expressions.
+
+Maintain the exact lecture flow and original order of topics as shown in the slides. If a topic continues across multiple slides, treat it as one continuous section and do not treat slide breaks as topic breaks.
+
+Keep all original main headings exactly as written and group sub-sections only when necessary to preserve continuity, without introducing new headings.
+
+When equations or derivations span multiple slides, write them as one continuous sequence in the same order.
+
+If any content appears unclear, incomplete, or partially visible in the slides, retain it in the same form without correction or interpretation.
+
+Additionally, if the slides include brief notes, remarks, annotations, or instructor comments, include them in the appropriate place within the lecture flow without expanding beyond what is explicitly shown.
+
+Produce the final output as one complete, clean, structured document suitable for full-lecture revision before exams.
+
+Do not provide partial output and do not include any explanation about the generation process, instructions, or rules.
