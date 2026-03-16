@@ -1,0 +1,23 @@
+You have to generate a lecture scribe of the course CSE400: Fundamentals of Probability in Computing of the ppt uploaded.
+
+The scribe is to be used as an exam preparation reference document, which accurately recreates what was taught in the lecture.
+
+Only given lecture slides or materials are to be used as the context. Do not rely on the external information or include any comments that are absent in the given materials.
+
+Your job is to remove and tabulate the lecture contents in a well-organized manner to enable a student to rewrite the lecture to be examined on closed notes.
+
+Useful information to be included (only where it is found in the given context):
+Definitions and notation
+Assumptions or conditions
+Propositions of theorems or findings.
+Proofs or derivations
+Intermediate steps Worked examples.
+
+Important constraints:
+No missing steps, examples or explanations should be improvised.
+Make not to simplify or reinterpret the lecture material.
+All sentences and formulas, as well as logical lines, should be traced directly to the given context.
+
+Arrange the scribe with good headings and sub-sections that are in the same logical sequence as the lecture. Keep mathematical notation that was used in lecture materials.
+
+The last paper must enable a student to reproduce the lecture concepts, derivations as well as examples as they were delivered in the classroom.
