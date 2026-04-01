@@ -1,0 +1,188 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath, amssymb}
+
+\title{CSE400 -- Fundamentals of Probability in Computing\\
+Lecture 21--22: Inequalities and Tail Bounds}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{1. Tail and Motivation of Tail Bounds}
+
+\begin{itemize}
+    \item Focus on analyzing probabilities of extreme events (tails of distributions).
+    \item Objective: Bound probabilities of the form:
+    \begin{itemize}
+        \item $P(X \geq a)$
+        \item $P(|X - \mu| \geq k)$
+    \end{itemize}
+    \item Motivation:
+    \begin{itemize}
+        \item Understanding rare events
+        \item Application in systems such as predicting worst-case server demand
+    \end{itemize}
+\end{itemize}
+
+\section*{2. Markov's Inequality}
+
+\subsection*{Definition}
+Let $X$ be a non-negative random variable and $a > 0$. Then:
+\[
+P(X \geq a) \leq \frac{\mathbb{E}[X]}{a}
+\]
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item $X \geq 0$
+    \item $a > 0$
+\end{itemize}
+
+\subsection*{Proof}
+\[
+\mathbb{E}[X] = \int_0^\infty x f(x)\, dx
+\]
+Split the integral:
+\[
+\mathbb{E}[X] \geq \int_a^\infty x f(x)\, dx
+\]
+Since $x \geq a$ for $x \geq a$:
+\[
+\geq a \int_a^\infty f(x)\, dx
+\]
+\[
+= a \cdot P(X \geq a)
+\]
+Thus:
+\[
+P(X \geq a) \leq \frac{\mathbb{E}[X]}{a}
+\]
+
+\subsection*{Example}
+Example provided in lecture demonstrating application of the bound using expectation.
+
+\section*{3. Chebyshev's Inequality}
+
+\subsection*{Definition}
+For a random variable $X$ with mean $\mu$ and variance $\sigma^2$:
+\[
+P(|X - \mu| \geq k) \leq \frac{\sigma^2}{k^2}
+\]
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item Mean $\mu$ exists
+    \item Variance $\sigma^2$ exists
+\end{itemize}
+
+\subsection*{Derivation}
+Apply Markov's inequality to:
+\[
+Y = (X - \mu)^2
+\]
+Then:
+\[
+P((X - \mu)^2 \geq k^2) \leq \frac{\mathbb{E}[(X - \mu)^2]}{k^2}
+\]
+Since:
+\[
+\mathbb{E}[(X - \mu)^2] = \sigma^2
+\]
+We obtain:
+\[
+P(|X - \mu| \geq k) \leq \frac{\sigma^2}{k^2}
+\]
+
+\subsection*{Example}
+Example in lecture showing deviation bound using variance.
+
+\section*{4. Chernoff Bound and Poisson Tail}
+
+\subsection*{Definition}
+Chernoff bound provides an exponential bound on tail probabilities:
+\[
+P(X \geq a) \leq \inf_{t > 0} \frac{\mathbb{E}[e^{tX}]}{e^{ta}}
+\]
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item Moment generating function exists
+\end{itemize}
+
+\subsection*{Proof (Outline as in lecture)}
+\begin{itemize}
+    \item Use exponential transformation:
+    \[
+    P(X \geq a) = P(e^{tX} \geq e^{ta})
+    \]
+    \item Apply Markov's inequality:
+    \[
+    \leq \frac{\mathbb{E}[e^{tX}]}{e^{ta}}
+    \]
+    \item Optimize over $t > 0$
+\end{itemize}
+
+\subsection*{Poisson Tail}
+\begin{itemize}
+    \item Application of Chernoff bound to Poisson random variables.
+    \item Produces exponentially decreasing tail probabilities.
+\end{itemize}
+
+\subsection*{Example}
+Example from lecture applying Chernoff bound to tail probability.
+
+\section*{5. Jensen's Inequality}
+
+\subsection*{Convex Function}
+A function $f$ is convex if:
+\[
+f(\lambda x_1 + (1 - \lambda)x_2) \leq \lambda f(x_1) + (1 - \lambda)f(x_2)
+\]
+
+\subsection*{Definition (Jensen's Inequality)}
+For a convex function $f$ and random variable $X$:
+\[
+f(\mathbb{E}[X]) \leq \mathbb{E}[f(X)]
+\]
+
+\subsection*{Assumptions}
+\begin{itemize}
+    \item $f$ is convex
+    \item Expectation exists
+\end{itemize}
+
+\subsection*{Example}
+Example in lecture illustrating convexity and inequality.
+
+\section*{6. Case Study: System-Level Understanding}
+
+\subsection*{Problem}
+\begin{itemize}
+    \item Predict worst-case demand on a server.
+\end{itemize}
+
+\subsection*{Approach}
+\begin{itemize}
+    \item Model system demand as random variable.
+    \item Apply:
+    \begin{itemize}
+        \item Markov's inequality
+        \item Chebyshev's inequality
+        \item Chernoff bound
+    \end{itemize}
+\end{itemize}
+
+\subsection*{Conclusion}
+\begin{itemize}
+    \item Tail bounds provide guarantees for:
+    \begin{itemize}
+        \item Worst-case behavior
+        \item System reliability
+        \item Capacity planning
+    \end{itemize}
+\end{itemize}
+
+\section*
+
+\end{document}
