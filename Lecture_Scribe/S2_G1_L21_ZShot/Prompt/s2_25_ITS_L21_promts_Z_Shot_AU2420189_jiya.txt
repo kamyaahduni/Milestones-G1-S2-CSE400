@@ -1,0 +1,13 @@
+follow the guidelines for zero shot prompting style strictly and make lecture scribe notes for l21_l22 ppt
+
+is this zero shot prompting style??
+
+Generate a lecture scribe intended to serve as exam reference material for CSE400 Lecture 21–22. Use only the provided lecture slides as context.
+
+Include all definitions, assumptions, theorem statements, proofs, derivations, and worked examples exactly as presented in the lecture materials. Do not introduce any new explanations, examples, or interpretations.
+
+Ensure strict faithfulness to the lecture content. Organize the scribe clearly with appropriate sections and headings so that it can be used effectively for revision.
+
+The output must reflect the structure and scope of the lecture and should allow a student to reconstruct the material for a closed-notes exam.
+
+this is zero shot right?
