@@ -1,0 +1,18 @@
+Prepare a lecture scribe of CSE400: Fundamentals of Probability in Computing to study exams, Lecture 21.
+
+Only the lecture materials are to be used. Be keen not to add any other knowledge or explanations.
+
+Add the following only in case they appear in the context:
+-Definitions and notation
+-Assumptions or setup
+-Results/inequalities/theorems.
+-Proofs or derivations
+-Worked examples with steps
+
+Strict rules:
+-No invention and filling in of missing work.
+Intuition: 
+-Do not make it simple or easy. Each statement has to be tracked down to the given material.
+
+Write the scribe in an organized manner, in the sequential order of the lecture, and maintain all the notation.
+The output you give should help the student in a closed book exam too.
